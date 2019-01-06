@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta charset="UTF-8"/>
+    <title>登录</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">登录</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text" th:if="${param.error}">错误提示</p>
+                    <p class="card-text" th:if="${param.logout}">注销提示</p>
+                    <form th:action="@{/login}" method="post">
+                        <div>
+                            <div class="form-group">
+                                <label for="username">用户名</label>
+                                <input class="form-control" id="username" name="username"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">密码</label>
+                                <input type="password" class="form-control" id="password" name="password"/>
+                            </div>
+                        </div>
+                        <input class="btn btn-success mt-3" type="submit" value="Submit"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
